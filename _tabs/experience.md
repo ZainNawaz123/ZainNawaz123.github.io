@@ -3,4 +3,5 @@ layout: page
 title: Experience
 icon: fas fa-briefcase
 order: 2
+permalink: /experience/
 ---
