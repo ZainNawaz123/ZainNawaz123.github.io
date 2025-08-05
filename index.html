@@ -1,4 +1,134 @@
 ---
-layout: home
+layout: page
 # Index page
+permalink: /
 ---
+
+<!-- 🧠 Hero Section -->
+<div class="hero-container">
+  <h1>Hello, I'm <br><span class="typed-text" id="typed"></span></h1>
+  <p class="subtext">Electrical Engineering Student & Photographer</p>
+
+  <div class="hero-buttons">
+    <a href="https://github.com/ZainNawaz123" target="_blank" class="icon-link">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://linkedin.com/in/zain-nawaz-221998183" target="_blank" class="icon-link">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://instagram.com/zan.photography_" target="_blank" class="icon-link">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <a href="/aboutme/" class="about-button">Find more here →</a>
+</div>
+
+<!-- ⌨️ Typed.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed("#typed", {
+    strings: ['Zain Nawaz', 'A Photographer', 'A Developer', 'An  Engineering Student'],
+    typeSpeed: 60,
+    backSpeed: 80,
+    loop: true
+  });
+</script>
+
+<!-- 🎨 Custom Styles -->
+<style>
+  .hero-container {
+    text-align: center;
+    margin-top: 20vh;
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .typed-text {
+    color: #0ea5e9;
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+
+  .subtext {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+  }
+
+  .hero-buttons {
+    margin-top: 2rem;
+  }
+
+.icon-link {
+  margin: 0 10px;
+  font-size: 2rem;
+  color: var(--icon-color, #000); /* fallback */
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  .icon-link {
+    color: #fff;
+  }
+
+  .icon-link:hover {
+    color: #0ea5e9;
+  }
+}
+
+/* LIGHT MODE */
+@media (prefers-color-scheme: light) {
+  .icon-link {
+    color: #000;
+  }
+
+  .icon-link:hover {
+    color: #0ea5e9;
+  }
+}
+  .about-button {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: #0ea5e9;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .about-button:hover {
+    background-color: #0284c7;
+  }
+
+  /* 🔁 Fade-in animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive tweaks if needed */
+  @media (max-width: 768px) {
+    .typed-text {
+      font-size: 2rem;
+    }
+
+    .icon-link {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
