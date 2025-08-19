@@ -107,20 +107,32 @@ permalink: /experience/
 </section>
 
 <style>
+  /* Improve cross-browser legibility, esp. on iOS */
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
   :root{
-    --fg:#eaeaea; --muted:#b7b7b7; --bg:#0b0b0c;
-    --line: rgba(255,255,255,.12);
-    --soft:#121217; --soft2:#1a1b22;
-    --accent:#0ea5e9; --accent-ink:#0b87c0;
+    /* Dark defaults */
+    --fg:#f3f4f6;            /* Main text */
+    --muted:#c7cbd1;         /* Secondary text */
+    --bg:#0b0b0c;            /* Page background (if used) */
+    --card:#14161a;          /* Card background (high contrast) */
+    --chip:#1d2128;          /* Tag background */
+    --line: rgba(255,255,255,.14);
+    --accent:#0ea5e9;
     --ring: rgba(14,165,233,.35);
   }
+
   @media (prefers-color-scheme: light){
     :root{
-      --fg:#151515; --muted:#666; --bg:#fff;
-      --line: rgba(0,0,0,.1);
-      --soft:#f5f7fb; --soft2:#eef1f6;
-      --accent:#0ea5e9; --accent-ink:#086a96;
-      --ring: rgba(14,165,233,.25);
+      --fg:#111827;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --card:#ffffff;
+      --chip:#f3f4f6;
+      --line: rgba(17,24,39,.08);
+      --accent:#0ea5e9;
+      --ring: rgba(14,165,233,.20);
     }
   }
 
@@ -132,16 +144,17 @@ permalink: /experience/
   .cards{ display: grid; gap: 1rem; }
 
   .card{
-    background: linear-gradient(180deg, var(--soft), var(--soft2));
+    background: var(--card);                 /* solid, high-contrast */
     border: 1px solid var(--line);
     border-radius: 16px;
     overflow: clip;
-    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
     transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    color: var(--fg);                        /* ensure card text is visible */
   }
   .card:hover{
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    box-shadow: 0 10px 24px rgba(0,0,0,.24);
     border-color: var(--ring);
   }
 
@@ -154,22 +167,22 @@ permalink: /experience/
   }
   .thumb{
     width: 60px; height: 60px; border-radius: 14px; object-fit: cover;
-    border: 1px solid var(--line); background: var(--soft2);
+    border: 1px solid var(--line); background: var(--chip);
   }
   .title h3{ margin: 0; font-size: 1.08rem; line-height: 1.25; }
-  .meta{ color: var(--muted); font-size: .93rem; margin-top: .18rem; }
-  .right{ color: var(--muted); font-size: .93rem; white-space: nowrap; }
+  .meta{ color: var(--muted); font-size: .95rem; margin-top: .18rem; }
+  .right{ color: var(--muted); font-size: .95rem; white-space: nowrap; }
 
   .card-body{
     padding: 0 1rem 1rem 1rem;
   }
   .blurb{ margin: .2rem 0 .7rem; }
   .bullets{ margin: 0 0 .6rem 1.2rem; }
-  .bullets li{ margin: .32rem 0; }
+  .bullets li{ margin: .34rem 0; }
   .tags{ display:flex; flex-wrap:wrap; gap: .45rem; margin-top: .2rem; }
   .tags span{
-    font-size: .8rem; padding: .34rem .6rem; border-radius: 999px;
-    background: var(--soft2); border: 1px solid var(--line);
+    font-size: .82rem; padding: .36rem .6rem; border-radius: 999px;
+    background: var(--chip); border: 1px solid var(--line); color: var(--fg);
   }
 
   /* Fancy heading underline */
@@ -181,15 +194,24 @@ permalink: /experience/
     width: 84px; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent);
   }
 
-  /* Accessibility focus styles for keyboard users */
+  /* Accessibility focus styles */
   .card:focus-within{
     outline: 2px solid var(--accent); outline-offset: 2px;
-    box-shadow: 0 0 0 6px var(--ring), 0 10px 24px rgba(0,0,0,.18);
+    box-shadow: 0 0 0 6px var(--ring), 0 10px 24px rgba(0,0,0,.24);
   }
 
+  /* Mobile readability tweaks */
   @media (max-width: 560px){
-    .card-head{ grid-template-columns: 52px 1fr auto; padding: .85rem .9rem .5rem; gap: .8rem; }
+    .card-head{ grid-template-columns: 52px 1fr auto; padding: .9rem .9rem .55rem; gap: .8rem; }
     .thumb{ width: 52px; height: 52px; border-radius: 12px; }
     .card-body{ padding: 0 .9rem .9rem .9rem; }
+    .meta, .right { font-size: 0.98rem; }  /* slightly larger */
+    .bullets li { line-height: 1.45; }
+  }
+
+  /* Users who force dark mode on mobile but the site is light — keep contrast high */
+  @media (prefers-contrast: more){
+    :root{ --muted: color-mix(in oklab, var(--fg) 70%, transparent); }
+    .card{ border-color: var(--ring); }
   }
 </style>

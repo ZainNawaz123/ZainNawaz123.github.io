@@ -149,6 +149,9 @@ permalink: /aboutme/
     --soft: #1b1b22;
     --accent: #0ea5e9; /* matches your home page */
     --shadow: 0 8px 30px rgba(0,0,0,.35);
+    --pill-bg: #1d2128;                 /* dark bg */
+  --pill-fg: #f7f8fa;                 /* dark text */
+  --pill-bd: rgba(255,255,255,.22);   /* dark border */
   }
   @media (prefers-color-scheme: light) {
     :root {
@@ -158,6 +161,9 @@ permalink: /aboutme/
       --card: #f6f7fb;
       --soft: #eef1f6;
       --shadow: 0 8px 30px rgba(0,0,0,.08);
+          --pill-bg: #eef2f7;               /* light bg */
+    --pill-fg: #0f172a;               /* light text */
+    --pill-bd: rgba(15,23,42,.16);    /* light border */
     }
   }
 
@@ -310,11 +316,28 @@ permalink: /aboutme/
   }
   .card h4 { margin: 0 0 .4rem; }
   .card p { color: var(--fg); opacity: .92; }
-  .pill-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
+  .pill-row {   display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin-top:.6rem; }
   .pill {
-    font-size: .82rem; padding: .35rem .6rem; border-radius: 999px;
-    background: var(--soft); border: 1px solid rgba(255,255,255,0.06);
+    display:inline-block;
+  font-size:.95rem;                    /* bumped for mobile readability */
+  line-height:1;
+  padding:.46rem .78rem;
+  border-radius:999px;
+  background:var(--pill-bg);
+  color:var(--pill-fg);
+  border:1px solid var(--pill-bd);
+  white-space:nowrap;
+  text-decoration:none;
+  /* ensure other site styles can’t dim them */
+  opacity:1 !important;;
   }
+
+  @media (max-width:560px){
+  .pill{ font-size:1rem; padding:.5rem .82rem; }
+}
 
   .contact { margin: 2rem 0 5rem; }
   .contact-card {
