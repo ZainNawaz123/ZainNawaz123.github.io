@@ -208,3 +208,32 @@ permalink: /experience/
   }
 </style>
 
+<script>
+  // Smooth height animation for <details> panels + single-open behavior (optional).
+  (function(){
+    const drops = Array.from(document.querySelectorAll('.drop'));
+    drops.forEach(d => {
+      const panel = d.querySelector('.panel');
+      const sync = () => {
+        if (d.open){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        } else {
+          panel.style.maxHeight = '0px';
+        }
+      };
+      // initial state
+      sync();
+      // toggle animation
+      d.addEventListener('toggle', () => {
+        // OPTIONAL: only one open at a time — comment this block to allow multi-open
+        if (d.open){
+          drops.forEach(o => { if (o !== d) { o.open = false; o.querySelector('.panel').style.maxHeight = '0px'; }});
+        }
+        // animate current
+        requestAnimationFrame(sync);
+      });
+      // handle resize (content height changes)
+      window.addEventListener('resize', () => { if (d.open) sync(); });
+    });
+  })();
+</script>
