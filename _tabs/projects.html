@@ -5,3 +5,79 @@ icon: fas fa-laptop-code
 order: 4
 permalink: /projects/
 ---
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<section class="projects">
+  <header class="pr-hero">
+    <h1>Hands-on builds and experiments. More coming soon</h1>
+  </header>
+
+  <!-- Tabs -->
+  <nav class="pr-tabs" role="tablist" aria-label="Project categories">
+    <a class="tab active" role="tab" aria-selected="true" href="/projects/arduino/">
+      <i class="fa-solid fa-microchip"></i> Arduino
+    </a>
+    <button class="tab disabled" role="tab" aria-selected="false" disabled>
+      <i class="fa-solid fa-computer"></i> Software (soon)
+    </button>
+    <button class="tab disabled" role="tab" aria-selected="false" disabled>
+      <i class="fa-solid fa-camera"></i> Photography Tools (soon)
+    </button>
+  </nav>
+
+  <!-- Content -->
+  <div class="pr-body">
+    <div class="pr-card">
+      <h3>Arduino</h3>
+      <p>
+        Locks, timers, LCD UIs, debounced inputs — little systems that just work.
+        Read the full build log + lessons learned.
+      </p>
+      <a class="cta" href="/projects/arduino/"><i class="fa-solid fa-arrow-right"></i> Open Arduino Journey</a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  :root{
+    --fg:#eaeaea; --muted:#b7b7b7; --bg:#0b0b0c;
+    --card:#131317; --soft:#1b1b22; --accent:#0ea5e9; --border: rgba(255,255,255,.1);
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --fg:#151515; --muted:#666; --bg:#fff; --card:#f6f7fb; --soft:#eef1f6; --border: rgba(0,0,0,.1); }
+  }
+
+  .projects{ max-width:1000px; margin:3rem auto; padding:0 1rem; color:var(--fg); }
+  .pr-hero{ text-align:center; margin-bottom:1.25rem; }
+  .pr-hero p{ color:var(--muted); }
+
+  .pr-tabs{ display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; margin:1rem 0 1.25rem; }
+  .tab{
+    display:inline-flex; align-items:center; gap:.5rem;
+    padding:.6rem .9rem; border-radius:999px; border:1px solid var(--border);
+    background:var(--soft); color:var(--fg); text-decoration:none; cursor:pointer;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .tab:hover{ transform:translateY(-2px); background:var(--accent); color:#fff; border-color:transparent; }
+  .tab.active{ background:var(--accent); color:#fff; border-color:transparent; }
+  .tab.disabled{ opacity:.5; cursor:not-allowed; }
+
+  .pr-body{ display:flex; grid-template-columns: 2fr 1fr; gap:1rem; justify-content:center }
+  @media (max-width:860px){ .pr-body{ grid-template-columns:1fr; } }
+
+  .pr-card{
+    background:linear-gradient(180deg, var(--card), var(--soft));
+    border:1px solid var(--border); border-radius:16px; padding:1.25rem; 
+  }
+  .cta{
+    display:inline-flex; gap:.5rem; align-items:center; margin-top:.6rem;
+    text-decoration:none; background:var(--accent); color:#fff; padding:.55rem .85rem; border-radius:10px;
+  }
+  .pr-coming{
+    background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.25rem;
+  }
+  .pr-coming h4{ margin-top:0; }
+  .pr-coming li{ color:var(--muted); }
+</style>

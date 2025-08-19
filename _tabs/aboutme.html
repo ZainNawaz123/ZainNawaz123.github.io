@@ -5,3 +5,354 @@ icon: fas fa-user
 order: 1
 permalink: /aboutme/
 ---
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<div class="about-wrap">
+  <!-- Sticky Profile Card -->
+  <aside class="profile-card">
+    <div class="pfp">
+      <img src="/assets/img/avatar.png" alt="Zain in a suit portrait" loading="eager" />
+    </div>
+    <h1 class="name">Zain Nawaz</h1>
+    <p class="role">Electrical Engineering @ UofT · Photographer</p>
+
+    <div class="quick-meta">
+      <div class="meta">
+        <span class="label">Based</span>
+        <span class="value">Oakville & Toronto</span>
+      </div>
+      <div class="meta">
+        <span class="label">Focus</span>
+        <span class="value">Event & Street Photography, Arduino, obotics </span>
+      </div>
+      <div class="meta">
+        <span class="label">Now</span>
+        <span class="value">Building projects & Capturing moments</span>
+      </div>
+    </div>
+
+    <div class="socials">
+      <a href="https://github.com/ZainNawaz123" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/zain-nawaz-221998183" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/zan.photography_" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+
+<div class="cta-links">
+  <a class="cta " href="/projects/">Projects</a>
+  <a class="cta" href="/experience/">Experience</a>
+  <a class="cta" href="/photography/">Photography</a>
+</div>  </aside>
+
+  <!-- Main Content -->
+  <main class="about-main">
+    <!-- Photo Banner -->
+    <section class="photo-banner">
+      <img src="/assets/img/photo.png" alt="Zain shooting a photo" loading="lazy" />
+      <div class="banner-caption">
+        <span class="dot"></span> Capturing moments between noise & silence.
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story">
+      <h2>Hi, I’m Zain.</h2>
+      <p>
+        I’m an Electrical Engineering student who likes to make things that <em>work</em> and photos that <em>feel</em>.
+        On the engineering side: Arduino builds, sensors, and small mechatronics that turn “what if” into “it works.”
+        On the photography side: concerts, street, and honest frames from around Toronto.
+      </p>
+      <p>
+        I’m motivated by iterative craft — small improvements compounding into something you’re proud to ship (or post).
+        If it blends creativity and systems thinking, I’m in.
+      </p>
+    </section>
+
+    <!-- Stats Row -->
+    <section class="stats">
+      <div class="stat">
+        <span class="num">5k+</span>
+        <span class="label">Shutter Presses (good ones)</span>
+      </div>
+      <div class="stat">
+        <span class="num">20+</span>
+        <span class="label">Arduino sketches</span>
+      </div>
+      <div class="stat">
+        <span class="num">10/10</span>
+        <span class="label">Iced coffee reliance</span>
+      </div>
+    </section>
+
+    <!-- Fun Fact Chips (shuffled on load) -->
+    <section class="fun-facts">
+      <h3>Little things about me</h3>
+      <ul id="facts" class="chips">
+        <li>🎸 Concerts are my favorite chaos to photograph.</li>
+        <li>📐 Overthinker by Design</li>
+        <li>🏊 Swimming clears my head better than anything</li>
+        <li>📷 Golden hour > everything else.</li>
+        <li>🎮 I love gaming, especially single player story games</li>
+        <li>🗣 Learning Korean on the side — slowly, surely.</li>
+        <li>🔧 I LOVE building things</li>
+        <li>🏋️ Gym time = my daily reset button</li>
+      </ul>
+    </section>
+
+    <!-- Two-Column: Engineering & Photography -->
+    <section class="twocol">
+      <div class="card">
+        <h4>⚡ Engineering</h4>
+        <p>
+          I build small systems with microcontrollers, sensors, and simple mechanics. The fun is in constraints:
+          power budgets, debouncing, clean state machines, and code you can trust when hardware jitters.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Arduino</span>
+          <span class="pill">C/C++</span>
+          <span class="pill">Circuits</span>
+          <span class="pill">Prototyping</span>
+        </div>
+      </div>
+      <div class="card">
+        <h4>📷Photography</h4>
+        <p>
+          Street & events — fast decisions, honest light. I chase composition and timing over heavy edits.
+          If the photo tells the truth, I keep it.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Street</span>
+          <span class="pill">Concerts</span>
+          <span class="pill">Lightroom</span>
+          <span class="pill">Prime Lenses</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <div class="contact-card">
+        <h3>Let’s build or shoot something.</h3>
+        <p>Down for collabs, event shoots, or cool hardware ideas.</p>
+        <a class="cta solid" href="mailto:zain081206@gmail.com">Email Me</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --fg: #eaeaea;
+    --muted: #b7b7b7;
+    --card: #131317;
+    --soft: #1b1b22;
+    --accent: #0ea5e9; /* matches your home page */
+    --shadow: 0 8px 30px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #ffffff;
+      --fg: #151515;
+      --muted: #666;
+      --card: #f6f7fb;
+      --soft: #eef1f6;
+      --shadow: 0 8px 30px rgba(0,0,0,.08);
+    }
+  }
+
+  .about-wrap {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  /* Sticky profile */
+  .profile-card {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    background: linear-gradient(180deg, var(--card), var(--soft));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    color: var(--fg);
+  }
+  .pfp {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .pfp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+  }
+  .name {
+    font-size: 1.6rem;
+    margin: 0.4rem 0 0.2rem;
+  }
+  .role {
+    color: var(--muted);
+    margin: 0 0 1rem;
+  }
+  .quick-meta { display: grid; gap: .75rem; margin: 1rem 0 1.25rem; }
+  .meta { display: grid; gap: .15rem; }
+  .meta .label { color: var(--muted); font-size: .8rem; letter-spacing: .02em; }
+  .meta .value { font-size: .95rem; }
+
+  .socials { display: flex; gap: .8rem; margin-bottom: 1rem; }
+  .socials a {
+    width: 40px; height: 40px; display: grid; place-items: center;
+    border-radius: 10px; background: var(--soft);
+    color: var(--fg); text-decoration: none; border: 1px solid rgba(255,255,255,0.06);
+    transition: transform .2s ease, background .2s ease, color .2s ease;
+  }
+  .socials a:hover { transform: translateY(-2px); background: var(--accent); color: #fff; }
+
+  .cta {
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .6rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .cta:hover { background: var(--accent); border-color: var(--accent); }
+
+  /* Main column */
+  .about-main { color: var(--fg); }
+
+  .photo-banner {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .photo-banner img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    filter: saturate(1.05) contrast(1.02);
+  }
+  .banner-caption {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    background: rgba(0,0,0,.45);
+    color: #fff;
+    padding: .5rem .75rem;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    font-size: .9rem;
+    display: inline-flex; align-items: center; gap: .5rem;
+  }
+  .banner-caption .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+  }
+
+  .story { margin: 2rem 0 1rem; }
+  .story h2 { margin: 0 0 .5rem; font-size: 1.6rem; }
+  .story p { color: var(--fg); opacity: .92; line-height: 1.7; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin: 2rem 0;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+  .stat .num { display: block; font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+  .stat .label { color: var(--muted); font-size: .9rem; }
+
+  .fun-facts { margin: 2.5rem 0 1rem; }
+  .fun-facts h3 { margin-bottom: .75rem; }
+  .chips {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-wrap: wrap; gap: .6rem;
+  }
+  .chips li {
+    padding: .55rem .8rem;
+    background: var(--soft);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 999px; font-size: .92rem;
+    transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    will-change: transform;
+  }
+  .chips li:hover { transform: translateY(-2px); background: var(--accent); color: #fff; border-color: transparent; }
+
+  .twocol {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0 3rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .card h4 { margin: 0 0 .4rem; }
+  .card p { color: var(--fg); opacity: .92; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
+  .pill {
+    font-size: .82rem; padding: .35rem .6rem; border-radius: 999px;
+    background: var(--soft); border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .contact { margin: 2rem 0 5rem; }
+  .contact-card {
+    background: linear-gradient(135deg, var(--soft), var(--card));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .cta.solid {
+    margin-top: .6rem;
+    background: var(--accent);
+    color: #fff; border-color: transparent;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .about-wrap { grid-template-columns: 1fr; }
+    .profile-card { position: relative; top: 0; }
+  }
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: 1fr; }
+    .twocol { grid-template-columns: 1fr; }
+    .photo-banner img { height: 260px; }
+  }
+</style>
+
+<script>
+  // Shuffle fun-fact chips so the page feels fresh
+  (function shuffleChips(){
+    const ul = document.getElementById('facts');
+    if(!ul) return;
+    const nodes = Array.from(ul.children);
+    for (let i = nodes.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [nodes[i], nodes[j]] = [nodes[j], nodes[i]];
+    }
+    nodes.forEach(n => ul.appendChild(n));
+  })();
+</script>
